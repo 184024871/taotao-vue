@@ -22,21 +22,11 @@
         data () {
             return {
                 bannerImg: [
-                    {src1: "http://s7.sinaimg.cn/mw690/006d98n9gy6VjYd2oWaf6", title1: "潭州教育"},
-                    {src2: "http://n.sinaimg.cn/sinacn02/766/w1000h566/20180419/c405-fzihnep6881871.png", title2: "潭州教育"},
-                    {src3: "http://s7.sinaimg.cn/mw690/00688u6Pzy74cmAK9Rs26&690", title3: "潭州教育"}
+                    {src1: "./static/images/mm.jpg", title1: "美眉"},
+                    {src2: "./static/images/xyj.jpg", title2: "洗衣机"},
+                    {src3: "./static/images/yyy.jpg", title3: "营养液"}
                 ]
             }
-        },
-        created(){
-            // 请求后台轮播图数据
-            let url = "https://route.showapi.com/852-1?showapi_appid=74726&showapi_sign=6a69ec9db6584ef8b3bdf810188b77a6";
-            url += `&showapi_timestamp=${Date.now()}`;
-            const that = this;
-            this.$ajax.get(url)
-                .then(res => {
-                    console.log("banner页：雅蠛蝶，上面的报错提示是因为ajax没有数据");
-                })
         }
     }
 </script>

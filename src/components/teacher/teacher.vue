@@ -54,7 +54,7 @@
                     "公课老师",
                     "心艾联盟",
                     "客服老师"
-                ], 
+                ],
                 manTeacher: [
                     {name: "假装接口数据", sex: "男", age: 18},
                     {name: "风屿老师", sex: "男", age: 18},
@@ -94,11 +94,11 @@
             tabActive (){
                 const wvTab = document.getElementsByClassName('wv-tab');
                 const tabCon = document.getElementsByClassName('tabCon');
-                
+
                 for(let i  = 0; i < wvTab.length; i++){
                     wvTab[i].index = i;
                     wvTab[i].onclick = function (){
-                        
+
                         for(let i = 0; i < wvTab.length; i++){
                             //wvTab[i].className = '';
                             tabCon[i].style.display = 'none';
@@ -106,19 +106,8 @@
 
                         tabCon[this.index].style.display = 'block';
                     }
-                } 
+                }
             }
-        },
-        created(){
-            // 请求后台接口数据
-            let url = "http://localhost:3000/"; // 本地数据库
-            const that = this;
-            this.$ajax.get(url)
-                .then(res => {
-                    that.shopping = res.data
-                    console.log(res.data)
-                })
-        
         }
     }
 </script>

@@ -18,8 +18,8 @@
                             <use xlink:href="#icon-news_icon"></use>
                     </svg>
                     <wv-badge style="position: absolute;top: -2px;right: -13px;">8</wv-badge>
-                </span>   
-                    新闻
+                </span>
+                    新货上市
             </wv-tabbar-item>
             <wv-tabbar-item :to="{name: 'Shop.Shopcart'}">
                 <span slot="icon" style="display: inline-block; position: relative;">
@@ -28,7 +28,7 @@
                     </svg>
                     <wv-badge v-if="shopNum" style="position: absolute;top: -2px;right: -13px;">{{ shopNum }}</wv-badge>
                 </span>
-                    商城
+                    购物车
             </wv-tabbar-item>
             <wv-tabbar-item to="/">
                 <span slot="icon" style="display: inline-block; position: relative;">
@@ -36,7 +36,7 @@
                             <use xlink:href="#icon-tubiaozhizuomobanyihuifu-"></use>
                     </svg>
                     <wv-badge is-dot style="position: absolute;top: 0;right: -6px;">8</wv-badge>
-                </span>    
+                </span>
                     我的
             </wv-tabbar-item>
         </wv-tabbar>
@@ -47,7 +47,7 @@
     // 导入购物监听
     import connect from '../../../static/js/connect.js'
     import shopTools from '../../../static/js/shopTools.js'
-    
+
     export default {
         name: 'Footer',
         data () {
