@@ -1,36 +1,57 @@
+<!-- 公共入口视图 -->
+<!-- 首页样式与shop页样式有冲突 -->
+
+<!-- html部分 -->
 <template>
   <div id="app">
-    <keep-alive exclude="classify,detail">
-      <router-view></router-view>
-    </keep-alive>
+    <Header></Header>
+    <div class="Header-box">占位盒子</div>
+    <router-view></router-view>
+    <Footer></Footer>
   </div>
 </template>
 
+<!-- js部分 -->
 <script>
+  // 导入购物监听
+  import connect from '../static/js/connect.js'
+  import shopTools from '../static/js/shopTools.js'
+
+  export default {
+    name: 'App',
+    data(){
+      return {
+        title: ""
+      }
+    },
+    created(){
+      // 页面适配方法（与首页ui框架样式有冲突）
+      // remChange();
+      // window.addEventListener('resize', remChange);
+      // function remChange(){
+      //     let html = document.getElementsByTagName('html')[0];
+      //     let width = html.getBoundingClientRect().width;
+      //     if(width >= 750){
+      //         width = 750;
+      //     }
+      //     html.style.fontSize = width / 10 + 'px';
+      // }
+
+      // 请求后台接口数据
+      let url = "https://route.showapi.com/852-1?showapi_appid=74726&showapi_sign=6a69ec9db6584ef8b3bdf810188b77a6";
+      url += `&showapi_timestamp=${Date.now()}`;
+      const that = this;
+      this.$ajax.get(url)
+        .then(res => {
+          console.log("App页：雅蠛蝶，上面的报错提示是因为ajax没有数据");
+        })
+    }
+  }
 </script>
 
-
-<style lang="scss">
-  @import './base/css/normalize.scss';
-  @import url('//at.alicdn.com/t/font_342152_sf25eoela9f9lik9.css');
-  body{
-    background: #f1f8f7;
-    #app{
-      background: #fff;
-      height:100%;
-      font-family: Microsoft YaHei;
-    }
-    .swiper-pagination-bullet{
-      width:8px;
-      height:8px;
-      [data-dpr="2"] & {
-        width:16px;
-        height:16px;
-      }
-      [data-dpr="3"] & {
-        width:24px;
-        height:24px;
-      }
-    }
+<!-- css部分 -->
+<style scoped>
+  .Header-box{
+    height: 40px;
   }
 </style>
